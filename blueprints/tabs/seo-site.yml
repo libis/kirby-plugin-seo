@@ -1,0 +1,83 @@
+label: SEO
+icon: search
+columns:
+  seoLeft:
+    width: 2/3
+    sections:
+      seoLeft:
+        type: fields
+        fields:
+          seoMainHeadline:
+            label: libis.seo.main
+            type: headline
+          site_meta_title:
+            label: libis.seo.site.title
+            type: text
+            help: libis.seo.site.title.help
+          site_meta_description:
+            label: libis.seo.site.description
+            type: textarea
+            buttons: false
+            minlength: 50
+            maxlength: 160
+            help: libis.seo.site.description.help
+          default_robots:
+            label: libis.seo.standard.indexing
+            type: select
+            required: true
+            options:
+              index_follow: "Index, follow"
+              noindex_follow: "Noindex, follow"
+            default: index_follow
+            help: libis.seo.standard.indexing.help
+          seo_section_titles:
+            label: libis.seo.title.structure
+            type: headline
+          title_pattern_default:
+            type: select
+            label: libis.seo.title.pattern
+            required: true
+            options:
+              title_stripe_site: 
+                *: libis.seo.title.pattern.option.title.stripe.site
+              site_stripe_title: 
+                *: libis.seo.title.pattern.option.site.stripe.title
+              title_comma_site: 
+                *: libis.seo.title.pattern.option.title.comma.site
+              site_comma_title: 
+                *: libis.seo.title.pattern.option.site.comma.title
+              title: 
+                *: libis.seo.title.pattern.option.title
+  seoRight:
+    width: 1/3
+    sections:
+      seoRight:
+        type: fields
+        fields: 
+          seo_section_social:
+            label: libis.seo.socialmedia
+            type: headline
+          og_default_image:
+            label: libis.seo.site.socialmedia.image
+            type: files
+            max: 1
+            layout: cards
+            size: small
+            help: libis.seo.site.socialmedia.image.help
+            query: site.find('media-folder').children.children.images
+            limit: 10
+          og_site_name:
+            label: libis.seo.site.socialmedia.sitename
+            type: text
+          seo_section_schema:
+            label: libis.seo.structured.data
+            type: headline
+          schema_type:
+            label: libis.seo.schema.type
+            type: select
+            default: Organization
+            options:
+              Organization: 
+                *: libis.seo.schema.type.organization
+              Person: 
+                *: libis.seo.schema.type.person

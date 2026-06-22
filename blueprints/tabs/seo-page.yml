@@ -1,0 +1,81 @@
+label: libis.seo
+icon: search
+columns:
+  seoLeft:
+    width: 2/3
+    sections:
+      seoLeft:
+        type: fields
+        fields:
+          seo_section_meta:
+            label: libis.seo.search.engines
+            type: headline
+          seo_title:
+            label: libis.seo.title
+            type: text
+            help: libis.seo.title.help
+          seo_description:
+            label: libis.seo.description
+            type: textarea
+            buttons: false
+            minlength: 50
+            maxlength: 160
+            help: libis.seo.description.help
+          seo_robots:
+            label: libis.seo.indexing
+            type: select
+            default: inherit
+            options:
+              inherit: 
+                *: libis.seo.indexing.option.default.site
+              index_follow: 
+                *: libis.seo.indexing.option.index.follow
+              noindex_follow: 
+                *: libis.seo.indexing.option.noindex.follow
+              noindex_nofollow: 
+                *: libis.seo.indexing.option.noindex.nofollow
+          seo_canonical:
+            label: libis.seo.canonical.url
+            type: url
+            help: libis.seo.canonical.url.help
+
+  seoRight:
+    width: 1/3
+    sections:
+      seoRight:
+        type: fields
+        fields:
+          seo_page_permalink:
+            label: libis.seo.page.permalink
+            help: libis.seo.page.permalink.help
+            type: info
+            theme: false          
+            text: "{{ page.seoPermalink }}"
+          seo_section_social:
+            label: libis.seo.socialmedia
+            type: headline
+          og_title:
+            label: libis.seo.socialmedia.title
+            type: text
+            help: libis.seo.socialmedia.title.help
+          og_description:
+            label: libis.seo.socialmedia.description
+            type: textarea
+            buttons: false
+          og_image:
+            label: libis.seo.socialmedia.image
+            type: files
+            max: 1
+            layout: cards
+            size: small
+            query: site.find('media-folder').children.children.images
+            limit: 10
+          seo_section_advanced:
+            label: libis.seo.advanced
+            type: headline
+          exclude_from_sitemap:
+            label: libis.seo.advanced.exclude.sitemap
+            type: toggle
+            text:
+              - libis.seo.no
+              - libis.seo.yes

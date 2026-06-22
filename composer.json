@@ -1,0 +1,16 @@
+{
+	"name": "libis/seo",
+	"description": "A plugin for site and page seo",
+	"license": "MIT",
+	"type": "kirby-plugin",
+	"version": "5.0.0",
+	"authors": [
+		{
+			"name": "LIBIS",
+			"email": "you@example.com"
+		}
+	],
+	"require": {
+		"getkirby/composer-installer": "^5.0"
+	}
+}
