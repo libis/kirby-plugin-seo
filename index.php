@@ -37,7 +37,7 @@ Kirby::plugin('libis/seo', [
 		'seoRobots' => function () {
       // Page-level override -- priority
       if ($this->seo_robots()->isNotEmpty() && $this->seo_robots()->value() !== 'inherit') {
-        return str_replace('_', ', ', $this->seo_robots()->value());
+        return str_replace('_', ', ', $this->seo_robots()->value() ?? '');
       }
 
       // Template-based noindex from config
