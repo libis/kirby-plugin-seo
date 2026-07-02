@@ -48,7 +48,7 @@ Kirby::plugin('libis/seo', [
       }
 
       // Fallback to site-wide default
-      return str_replace('_', ', ', site()->default_robots()->value());
+      return str_replace('_', ', ', site()->default_robots()->value() ?? '');
     },
 		'structuredData' => function () {
 			if (str_contains($this->seoRobots(), 'noindex')) {
